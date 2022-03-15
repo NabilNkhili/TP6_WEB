@@ -1,5 +1,3 @@
-"use strict";
-
 const fs = require('fs');
 
 let movies = {};
@@ -11,15 +9,7 @@ exports.load = function(filename) {
 };
 
 exports.save = function(filename) {
-  // make sure to only save the right fields
-  let replacer = function(key,value) {
-    if (['id', 'title', 'year', 'actors', 'plot', 'poster'].includes(key) ){
-      return value;
-    } else {
-      return undefined;
-    }
-  };
-  fs.writeFileSync(filename, JSON.stringify(movies, replacer));
+  fs.writeFileSync(filename, JSON.stringify(movies));
 };
 
 exports.list = function() {
@@ -64,9 +54,15 @@ exports.update = function(id, title, year, actors, plot, poster) {
 exports.delete = function(id) {
   if(id in movies) {
     delete movies[id];
+    
     return true;
   } else {
     return false;
   }
 };
+
+exports.getTitle = function(id){
+  return movies[id].title;
+}
+
 

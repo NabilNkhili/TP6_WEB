@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<body>
+	<h1>Modifier le film : {{title}}</h1>
+
+	<form action="/edit-movie/{{id}}">
+    <span>Titre :         </span><input name="title" type="text"  value="{{title}}" placeholder=" ex : Fight Club" />
+    <br><br>
+    <span>Description  : </span><input name="description" type="text"  value="{{plot}}" placeholder="ex : Une histoire simple">
+    <br><br>
+    <span>Acteurs :       </span><input type="text" name="actors" value="{{actors}}" placeholder=" ex : Brad Pitt " />
+    <br><br>
+    <span>Url de l'affiche  : </span><input type="text" name="posterUrl" value="{{poster}}" placeholder="ex : https://." />
+    <br><br>
+    <span>Année :            </span><input type="text" name="year"  value="{{year}}" placeholder="ex : 1999" />
+    <br><br>
+    <button type="submit">Valider</button>
+
+
+</form>
+<form action="/">
+	<button type="submit">retour
+menu</button>
+</form>
+
+
+
+
+
+</body>
+</body>
+</html>
+<html>
